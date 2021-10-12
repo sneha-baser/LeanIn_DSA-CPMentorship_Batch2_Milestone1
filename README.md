@@ -2,5 +2,5 @@
 It contain submission of solution by mentees for first milestone
 
 ## How to Submit
-Check the [Contributing](/CONTRIBUTING.md) guide to find out how to start contributing and other guidelines.
+Check the [Contributing](/Contributing.md) guide to find out how to start contributing and other guidelines.
 
