@@ -39,7 +39,7 @@ You can alternatively copy the URL by clicking on the green “Code” button fr
 Once we have the URL, we’re ready to clone the repository. To do this, we’ll combine the git clone command with the repository URL from the command line in a terminal window:
 
 ````bash
-$ git clone https://github.com/your-username/dsc-hacktoberfest-2021.git
+$ git clone https://github.com/your-username/LeanIn_DSA-CPMentorship_Batch2_Milestone1.git
 ````
 
 
