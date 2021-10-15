@@ -1,0 +1,48 @@
+//Q2, TO FIND CONTIGNUOUS SUB-ARRAY
+
+
+
+#include <iostream>
+using namespace std;
+int n, arr[10];
+ 
+// Function to find the maximum sum of a contiguous subarray
+
+int cont(int arr[], int n)
+{
+    // stores the maximum sum subarray found so far
+    int max_so_far = 0;
+ 
+    // stores the maximum sum of subarray ending at the current position
+    int max_ending_here = 0;
+ 
+    // traverse the given array
+    for (int i = 0; i < n; i++)
+    {
+      
+        max_ending_here = max(max_ending_here, 0);
+ 
+        // if the current subarray sum is found to be greater then we update the array
+        max_so_far = max(max_so_far, max_ending_here);
+    }
+ 
+    return max_so_far;
+}
+ 
+int main()
+{
+    cout << "Enter the size of the array : ";
+            cin >> n;
+    cout << "\nEnter the elements of the array : ";
+    for (int i = 0; i < n; i++)
+            cin >> arr[i];
+    int n = sizeof(arr)/sizeof(arr[0]);
+ 
+    cout << "The maximum sum of a contiguous subarray is " <<
+            cont(arr, n);
+ 
+    return 0;
+}
+
+//README: We maintained a positive sum subarray ending at the index of the given array. The subarray can be empty or contain value greater than maximum
+// subarray ending at previous index. This logic has been used in the function int cont() and int main() coded below is the driver function.
