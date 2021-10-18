@@ -1,0 +1,70 @@
+#include<iostream>
+#include<cstring>
+#include <unordered_map>
+
+using namespace std;
+
+void areIsomorphic(string str1,string str2,int l1)
+{
+	int key,value,flag=0;
+	unordered_map<int,int> m;
+ 
+    
+    for(int i=0;i<l1;i++)
+    {
+    	key=(int)str1[i];
+    	value=(int)str2[i];
+    	
+    	
+    	if (m.find(key)==m.end())
+    	{
+    		//pair(mapping) bnaye
+    		m.insert(make_pair(key,value));
+		}
+		else if(m.find(key)!=m.end())
+		{
+		
+			if(m.at(key)!=value)
+			{
+				cout<<"\n\nNOT ISOMORPHIC!!";
+				flag=1;
+			}
+		}
+	}
+	
+	if(flag==0)
+	{
+		cout<<"\n\nISOMORPHIC STRING!!";
+	}
+    
+}
+
+int main()
+{
+	string str1,str2;
+	
+	cout<<"\nString 1 => ";
+	cin>>str1;
+	
+	cout<<"\nString 2 => ";
+	cin>>str2;
+	
+	int l1=str1.length();
+	int l2=str2.length();
+	
+	//corner case
+	if(l1!=l2)
+	{
+		cout<<"\nLengths must be same!!";
+	}
+	else if(l1==l2)
+	{
+		//call our function
+		areIsomorphic(str1,str2,l1);
+	}
+	
+	return 0;
+}
+
+//README- A Simple Solution is to consider every character of ‘str1’ and check if all occurrences of it map to same character in ‘str2’. 
+Time complexity of this solution is O(n*n). We have used the concept of maps to solve the problem.
